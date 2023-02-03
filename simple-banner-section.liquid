@@ -208,14 +208,25 @@ video {
       visibility: hidden;
   }
 }
-.video_wrapper_desktop {
 
+.Banner__Slide.Carousel__Cell {
+    display: block;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.video_wrapper_desktop {
     position: relative;
     overflow: hidden;
 }
 .video_wrapper_desktop .desktop-video {
-
     z-index: 1;
+}
+.vid_poster_desk {
+    z-index: 1;
+}
+.js .Banner__Content .SectionHeader {
+    opacity: 1;
 }
  </style>
  <section id="section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="simple-banner">
