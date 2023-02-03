@@ -102,8 +102,7 @@
                   </div>
                 {%- endif -%}
               </div>
-              {% comment %}
-                
+
               <style>
                 #shopify-section-{{ section.id }} .vid_poster_mobile .image.js-enabled {
                       padding-top: {{block.settings.mobile_video_padding}}%;
@@ -112,17 +111,20 @@
                       padding-top: {{block.settings.desktop_video_padding}}%;
                   }
               </style>
-              
-              {% endcomment %}
+
               <script>
-                let vid_poster_desk = document.querySelector(".vid_poster_desk");
-                let vid_poster_mobile = document.querySelector(".vid_poster_mobile");
-                    window.onload = (event) =>{
-                        vid_poster_desk.classList.add("hideIt");
-                  
-                        vid_poster_mobile.classList.add("hideIt");
-                     
-                }
+  
+                window.addEventListener("load", (event) => {
+                  let vid_poster_desk = document.querySelector("#section-{{ section.id }} .vid_poster_desk");
+                  let vid_poster_mobile = document.querySelector("#section-{{ section.id }} .vid_poster_mobile");
+                  if (vid_poster_desk){
+                    vid_poster_desk.classList.add("hideIt");
+                  }
+                  if (vid_poster_mobile){
+                    vid_poster_mobile.classList.add("hideIt");
+                  }
+                });
+                
               </script>
             {%- endif -%}
           {%- else -%}
